@@ -9,24 +9,172 @@ from imutils.video import FPS
 import pyautogui
 
 def known():
-    # Buat send known images
+    # Buat send known
     pyautogui.write("Andrew Detected")
     time.sleep(2)
     pyautogui.press("enter")
 
 def unknown():
-    # Buat send unknown images
+    # Buat send unknown
     pyautogui.write("Intruder Detected")
     time.sleep(2)
     pyautogui.press("enter")
 
 def setup_whatsapp():
     # setup page whatsapp
-    os.system("chromium web.whatsapp.com")
+    # os.system("chromium web.whatsapp.com")
+    pyautogui.moveTo(786,763)
+    pyautogui.click()
     time.sleep(30)
-    pyautogui.moveTo(211,341)
+    pyautogui.moveTo(286,209)
     time.sleep(2)
     pyautogui.click()
+
+def prototype_photo():
+    # Select Attach
+    time.sleep(2)
+    pyautogui.moveTo(562,681)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    # Select Image
+    time.sleep(2)
+    pyautogui.moveTo(561,615)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    # Select Documents
+    time.sleep(2)
+    pyautogui.moveTo(343,270)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    # Select Machine Learning
+    time.sleep(2)
+    pyautogui.moveTo(494,129)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    # Select home
+    time.sleep(2)
+    pyautogui.moveTo(681,112)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    # Select Facial Recog
+    time.sleep(2)
+    pyautogui.moveTo(861,167)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    # Select Log
+    time.sleep(2)
+    pyautogui.moveTo(835,257)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    # Select Known
+    time.sleep(2)
+    pyautogui.moveTo(839,133)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    # Select Image
+    time.sleep(2)
+    pyautogui.moveTo(862,111)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    pyautogui.press("enter")
+    # unknown
+    # pyautogui.moveTo(326,149)
+    # time.sleep(1)
+    # pyautogui.click()
+    # pyautogui.click()
+    # Send
+    # pyautogui.moveTo(335,127)
+    # time.sleep(1)
+    # pyautogui.click()
+    # pyautogui.click()
+    # Write
+    time.sleep(2)
+    pyautogui.write("Andrew Detected")
+    time.sleep(3)
+    pyautogui.press("enter")
+
+def prototype_photo_unknown():
+    # Select Attach
+    time.sleep(2)
+    pyautogui.moveTo(562,681)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    # Select Image
+    time.sleep(2)
+    pyautogui.moveTo(561,615)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    # Select Documents
+    time.sleep(2)
+    pyautogui.moveTo(343,270)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    # Select Machine Learning
+    time.sleep(2)
+    pyautogui.moveTo(494,129)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    # Select home
+    time.sleep(2)
+    pyautogui.moveTo(681,112)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    # Select Facial Recog
+    time.sleep(2)
+    pyautogui.moveTo(861,167)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    # Select Log
+    time.sleep(2)
+    pyautogui.moveTo(835,257)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    # Select unknown
+    time.sleep(2)
+    pyautogui.moveTo(847,148)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    # Select Image
+    time.sleep(2)
+    pyautogui.moveTo(862,111)
+    time.sleep(1)
+    pyautogui.click()
+    time.sleep(1)
+    pyautogui.press("enter")
+    # unknown
+    # pyautogui.moveTo(326,149)
+    # time.sleep(1)
+    # pyautogui.click()
+    # pyautogui.click()
+    # Send
+    # pyautogui.moveTo(335,127)
+    # time.sleep(1)
+    # pyautogui.click()
+    # pyautogui.click()
+    # Write
+    time.sleep(2)
+    pyautogui.write("Intruder Detected")
+    time.sleep(3)
+    pyautogui.press("enter")
+
+
 
 def LOG_insert(file, format, text, level):
             infoLog = logging.FileHandler(file)
@@ -105,9 +253,10 @@ while True:
                 cv2.imwrite(c,frame)
                 print("Andrew" + " " + "Detected" +'\t' + timer)
                 write("Andrew" + " " + "Detected" +'\t\t' + timer ,logfile)
-                known()
-                time.sleep(10)
-
+                #known()
+                prototype_photo()
+                time.sleep(60)
+                
         else:
             time.sleep(3)
             count = 0
@@ -131,7 +280,8 @@ while True:
                 print("Unknown" + " " + "Detected" +'\t' + timer)
                 write("Unknown" + " " + "Detected" +'\t\t' + timer ,logfile)
                 unknown()
-                time.sleep(10)
+                # prototype_photo_unknown()
+                time.sleep(60)
 
 
         cv2.putText(
